@@ -12,9 +12,6 @@ def get_db():
     conn.row_factory = sqlite3.Row
     return conn
 
-@app.route("/")
-def home():
-    return "Smart City Backend Running"
 
 @app.route("/report",methods=["POST"])
 def report_issue():
