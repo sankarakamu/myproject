@@ -1,7 +1,11 @@
 from flask import Flask,request,jsonify
+from flask import send_from_directory
 import sqlite3
 
 app = Flask(__name__)
+@app.route("/")
+def home():
+    return send_from_directory(".", "index.html")
 
 def get_db():
     conn = sqlite3.connect("issues.db")
