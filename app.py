@@ -14,21 +14,7 @@ def get_db():
 
 
 @app.route("/report",methods=["POST"])
-@app.route("/issues", methods=["GET"])
-def get_issues():
 
-    conn = get_db()
-    cur = conn.cursor()
-
-    cur.execute("SELECT * FROM issues")
-
-    rows = cur.fetchall()
-
-    issues = [dict(row) for row in rows]
-
-    conn.close()
-
-    return jsonify(issues)
 def report_issue():
 
     data=request.json
